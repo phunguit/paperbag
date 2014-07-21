@@ -49,16 +49,28 @@
             </div>
         </div>
 
-        <div class="container">
-            <div class="heading text-center">
-                <h3>{{ t.top_sellers }}</h3>
-            </div>
-        </div>
+        <div class="board">
+            <div class="container">
+                <div class="row">
+                    <div class="text-center">
+                        <h3>{{ t.top_sellers }}</h3>
+                    </div>
+                </div>
 
-        <div class="container hidden-sm hidden-xs">
-            <div class="masonry" data-url="{{ url('index/topSellers') }}">
-                <div class="text-center">
-                    <h4>{{ t.please_wait }}</h4>
+                <div class="row">
+                    {% for u in top_sellers %}
+                        <div class="col-md-4">
+                            <div class="media">
+                                <a class="pull-left" href="#">
+                                    <img class="media-object" src="{{ img.small(u.photo) }}">
+                                </a>
+                                <div class="media-body">
+                                    <h4 class="media-heading">{{ u.name|e }}</h4>
+                                    <p>{{ u.location|e }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>

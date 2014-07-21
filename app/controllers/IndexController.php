@@ -9,6 +9,8 @@ class IndexController extends ControllerBase
         $this->view->current_banner = Banners::getCurrentBanner();
         $this->logger->log('Loading popular items...');
         $this->view->popular_items = Items::getPopularItems();
+        $this->logger->log('Loading top sellers...');
+        $this->view->top_sellers = Users::getTopSellers();
     }
 
     public function popularAction()
@@ -17,13 +19,5 @@ class IndexController extends ControllerBase
         $this->view->setRenderLevel(\Phalcon\Mvc\View::LEVEL_ACTION_VIEW);
         $this->logger->log('Loading popular items...');
         $this->view->popular_items = Items::getPopularItems();
-    }
-
-    public function topSellersAction()
-    {
-        $this->logger->log('Initialize topSellers action in index controller.');
-        $this->view->setRenderLevel(\Phalcon\Mvc\View::LEVEL_ACTION_VIEW);
-        $this->logger->log('Loading top sellers...');
-        $this->view->top_sellers = Users::getTopSellers();
     }
 }
