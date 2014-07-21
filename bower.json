@@ -1,0 +1,20 @@
+{
+  "name": "paperbag",
+  "version": "1.0.0",
+
+  "authors": [
+    {
+      "name": "Kristianto Lie",
+      "email": "kreizlie@gmail.com"
+    }
+  ],
+
+  "dependencies": {
+    "bootstrap-sass-twbs": "~3.2.0",
+    "imagesloaded": "~3.1.7",
+    "masonry": "~3.1.5",
+    "modernizr": "~2.8.3",
+    "respond": "~1.4.2",
+    "webfontloader": "~1.5.5"
+  }
+}

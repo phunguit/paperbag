@@ -1,2 +1,10 @@
-/cache/
-/config/development/
+*.lock
+.DS_Store
+.idea
+.phalcon
+.sass-cache
+bower_components
+node_modules
+vendor
+/css
+/js
