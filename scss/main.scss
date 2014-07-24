@@ -58,6 +58,7 @@
 
   .input-group-btn {
     .btn {
+      @include box-shadow(none);
       &:hover,
       &:focus {
         border-left: none;
