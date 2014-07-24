@@ -1,5 +1,9 @@
 <?php
 
+if (!isset($_SERVER['HTTP_HOST']) || strpos($_SERVER['HTTP_HOST'], 'infrakreasi.com') === false) {
+    exit();
+}
+
 echo '<pre>';
 
 $home = '/home5/infrakre';
