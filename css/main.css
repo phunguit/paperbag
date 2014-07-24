@@ -4622,17 +4622,17 @@ tbody.collapse.in {
   border-color: transparent;
 }
 .navbar-inverse .navbar-brand {
-  color: dimgray;
+  color: #2c4762;
 }
 .navbar-inverse .navbar-brand:hover, .navbar-inverse .navbar-brand:focus {
   color: black;
   background-color: transparent;
 }
 .navbar-inverse .navbar-text {
-  color: dimgray;
+  color: #2c4762;
 }
 .navbar-inverse .navbar-nav > li > a {
-  color: dimgray;
+  color: #2c4762;
 }
 .navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
   color: black;
@@ -4640,27 +4640,27 @@ tbody.collapse.in {
 }
 .navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
   color: black;
-  background-color: #eeeeee;
+  background-color: #f9f9f9;
 }
 .navbar-inverse .navbar-nav > .disabled > a, .navbar-inverse .navbar-nav > .disabled > a:hover, .navbar-inverse .navbar-nav > .disabled > a:focus {
-  color: #aaaaaa;
+  color: #c3ced8;
   background-color: transparent;
 }
 .navbar-inverse .navbar-toggle {
-  border-color: #aaaaaa;
+  border-color: #2c4762;
 }
 .navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus {
-  background-color: #eeeeee;
+  background-color: #f9f9f9;
 }
 .navbar-inverse .navbar-toggle .icon-bar {
-  background-color: #aaaaaa;
+  background-color: #2c4762;
 }
 .navbar-inverse .navbar-collapse,
 .navbar-inverse .navbar-form {
   border-color: #ededed;
 }
 .navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
-  background-color: #eeeeee;
+  background-color: #f9f9f9;
   color: black;
 }
 @media (max-width: 767px) {
@@ -4671,7 +4671,7 @@ tbody.collapse.in {
     background-color: transparent;
   }
   .navbar-inverse .navbar-nav .open .dropdown-menu > li > a {
-    color: dimgray;
+    color: #2c4762;
   }
   .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:focus {
     color: black;
@@ -4679,27 +4679,27 @@ tbody.collapse.in {
   }
   .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a, .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a:focus {
     color: black;
-    background-color: #eeeeee;
+    background-color: #f9f9f9;
   }
   .navbar-inverse .navbar-nav .open .dropdown-menu > .disabled > a, .navbar-inverse .navbar-nav .open .dropdown-menu > .disabled > a:hover, .navbar-inverse .navbar-nav .open .dropdown-menu > .disabled > a:focus {
-    color: #aaaaaa;
+    color: #c3ced8;
     background-color: transparent;
   }
 }
 .navbar-inverse .navbar-link {
-  color: dimgray;
+  color: #2c4762;
 }
 .navbar-inverse .navbar-link:hover {
   color: black;
 }
 .navbar-inverse .btn-link {
-  color: dimgray;
+  color: #2c4762;
 }
 .navbar-inverse .btn-link:hover, .navbar-inverse .btn-link:focus {
   color: black;
 }
 .navbar-inverse .btn-link[disabled]:hover, .navbar-inverse .btn-link[disabled]:focus, fieldset[disabled] .navbar-inverse .btn-link:hover, fieldset[disabled] .navbar-inverse .btn-link:focus {
-  color: #aaaaaa;
+  color: #c3ced8;
 }
 
 .breadcrumb {
@@ -6692,14 +6692,55 @@ button.close {
     display: none !important;
   }
 }
+.navbar {
+  margin-bottom: 0;
+}
 @media (max-width: 767px) {
-  .navbar-default,
-  .navbar-inverse {
-    margin-bottom: 0;
-  }
-  .navbar-default .navbar-brand,
-  .navbar-inverse .navbar-brand {
+  .navbar .navbar-brand {
     padding-top: 7px;
     padding-bottom: 8px;
   }
+}
+
+.header {
+  background-color: #fff;
+}
+
+.form-search {
+  position: relative;
+  margin: 15px 0;
+}
+.form-search .form-group {
+  margin-bottom: 0;
+}
+.form-search .form-group:first-child {
+  position: absolute;
+  top: -7px;
+  left: 0;
+}
+.form-search .form-group:nth-child(2) {
+  padding-left: 165px;
+  padding-right: 150px;
+}
+@media (max-width: 767px) {
+  .form-search .form-group:nth-child(2) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+.form-search .form-group:last-child {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.form-search .form-control {
+  border-right: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.form-search .form-control:hover, .form-search .form-control:focus {
+  border-color: #cccccc;
+}
+.form-search .input-group-btn .btn:hover, .form-search .input-group-btn .btn:focus {
+  border-left: none;
 }
