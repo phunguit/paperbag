@@ -1,7 +1,8 @@
 *.lock
 .DS_Store
-.idea
 .htaccess
+.idea
+.sass-cache
 vendor
 node_modules
 bower_components
