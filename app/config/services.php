@@ -6,7 +6,7 @@ use Phalcon\Events\Manager as EventsManager;
 use Phalcon\Logger;
 use Phalcon\Logger\Adapter\File as LogAdapter;
 use Phalcon\Logger\Formatter\Line as LogFormatter;
-use Phalcon\Mvc\Model\MetaData\Memory as MetaDataAdapter;
+use Phalcon\Mvc\Model\MetaData\Files as MetaDataAdapter;
 use Phalcon\Mvc\Url as UrlResolver;
 use Phalcon\Mvc\View;
 use Phalcon\Mvc\View\Engine\Volt as VoltEngine;
