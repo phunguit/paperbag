@@ -148,7 +148,7 @@ class Schema
         $this->db = $db;
     }
 
-    public function createTables()
+    public function setup()
     {
         echo 'Delete existing tables...' . PHP_EOL;
         foreach (array_reverse($this->tables) as $table) {
@@ -163,7 +163,7 @@ class Schema
         }
     }
 
-    public function feedData()
+    public function seed()
     {
         echo 'Create default settings...' . PHP_EOL;
         $settings = array(
@@ -281,10 +281,10 @@ include __DIR__ . '/autoload.php';
 $schema = new Schema();
 $schema->setDb($di->getShared('db'));
 
-if (isset($_GET['create']) && $_GET['create'] == 1) {
-    $schema->createTables();
+if (isset($_GET['setup']) && $_GET['setup'] == 1) {
+    $schema->setup();
 }
 
-if (isset($_GET['feed']) && $_GET['feed'] == 1) {
-    $schema->feedData();
+if (isset($_GET['seed']) && $_GET['seed'] == 1) {
+    $schema->seed();
 }
