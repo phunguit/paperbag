@@ -1,10 +1,6 @@
 @import "variables";
 @import "bootstrap";
 
-.navbar {
-  font-weight: lighter !important;
-}
-
 .navbar-default,
 .navbar-inverse {
   @media (max-width: $screen-xs-max) {

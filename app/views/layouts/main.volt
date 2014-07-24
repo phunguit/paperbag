@@ -24,7 +24,7 @@
 </head>
 <body>
 
-<nav class="navbar navbar-inverse" role="navigation">
+<nav class="navbar navbar-default" role="navigation">
     <div class="container">
         <div class="navbar-header">
             <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
