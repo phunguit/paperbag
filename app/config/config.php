@@ -15,6 +15,7 @@ $config = new \Phalcon\Config(array(
         'language' => 'en',
         'cacheDir' => __DIR__ . '/../../app/cache/',
         'controllersDir' => __DIR__ . '/../../app/controllers/',
+        'imagesDir' => __DIR__ . '/../../img/',
         'languagesDir' => __DIR__ . '/../../app/languages/',
         'logsDir' => __DIR__ . '/../../app/logs/',
         'modelsDir' => __DIR__ . '/../../app/models/',
@@ -32,6 +33,7 @@ $config = new \Phalcon\Config(array(
     ),
 
     'image' => array(
+        'tiny' => '50x50',
         'small' => '100x100',
         'medium' => '210x210',
         'large' => '500x500'

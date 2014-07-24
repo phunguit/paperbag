@@ -19,8 +19,11 @@ $ ->
       "h5"
       "h6"
       "p"
+      "small"
       "span"
+      "strong"
       "table"
+      "ul"
     ]
 
     style = "<style>"

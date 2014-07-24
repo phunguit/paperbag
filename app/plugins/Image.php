@@ -19,6 +19,7 @@ class Image extends \Phalcon\Mvc\User\Plugin
     {
         if (!$sizes) {
             $sizes = array(
+                'tiny' => '32x32',
                 'small' => '64x64',
                 'medium' => '128x128',
                 'large' => '512x512'
@@ -35,6 +36,23 @@ class Image extends \Phalcon\Mvc\User\Plugin
                 );
             }
         }
+    }
+
+    public function tiny($image = false, $altImage = 'holder.png')
+    {
+        if (!$image || !file_exists($this->imagesDir . $image)) {
+            $image = $altImage;
+        }
+
+        $width = $this->sizes['tiny']['width'];
+        $height = $this->sizes['tiny']['height'];
+        $array = explode('/', $image);
+        $cache = 'cache/' . $width . 'x' . $height . '-' . implode('-', $array);
+
+        if (!file_exists($this->imagesDir . $cache)) {
+            $this->resizeImage($this->imagesDir . $image, $this->imagesDir . $cache, $width, $height);
+        }
+        return $this->baseUri . $cache;
     }
 
     public function small($image = false, $altImage = 'holder.png')

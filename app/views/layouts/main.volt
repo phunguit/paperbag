@@ -50,7 +50,7 @@
     <div class="container">
         <form class="form form-search" role="search" action="{{ url() }}">
             <div class="form-group hidden-xs">
-                <a href="{{ url() }}"><img src="{{ url('img/logo.png') }}" width="146" height="60"></a>
+                <a href="{{ url() }}"><img src="{{ url('img/logo.png') }}"></a>
             </div>
 
             <div class="form-group">
@@ -61,9 +61,27 @@
             </div>
 
             <div class="form-group hidden-xs">
-                <a class="btn btn-primary btn-lg" href="{{ url() }}">{{ t.browse_all }}</a>
+                <button class="btn btn-primary btn-lg" type="button" data-toggle="collapse" data-target=".nav-grid-collapse">{{ t.browse_all }}</button>
             </div>
         </form>
+    </div>
+
+    <div class="collapse nav-grid-collapse">
+        <div class="container">
+            <nav class="nav-grid" role="navigation">
+                {% for c in categories %}
+                    <div class="col-sm-4">
+                        <div class="nav-item">
+                            <a href="{{ url() }}"><img src="{{ img.tiny(c.image) }}"></a>
+                            <ul>
+                                <li><a href="{{ url() }}">{{ c.category|e }}</a></li>
+                                <li><small>33 items from 5 sellers</small></li>
+                            </ul>
+                        </div>
+                    </div>
+                {% endfor %}
+            </nav>
+        </div>
     </div>
 </header>
 

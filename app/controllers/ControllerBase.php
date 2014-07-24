@@ -11,5 +11,6 @@ class ControllerBase extends Controller
         $this->view->site_description = Settings::get('site_description');
         $this->view->site_keywords = Settings::get('site_keywords');
         $this->view->site_author = Settings::get('site_author');
+        $this->view->categories = Categories::getCategories();
     }
 }

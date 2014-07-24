@@ -7,7 +7,7 @@
           families: ["Source+Sans+Pro:300,400,700,300italic,400italic,700italic"]
         }
       });
-      elements = ["a", "button", "form", "h1", "h2", "h3", "h4", "h5", "h6", "p", "span", "table"];
+      elements = ["a", "button", "form", "h1", "h2", "h3", "h4", "h5", "h6", "p", "small", "span", "strong", "table", "ul"];
       style = "<style>";
       index = 0;
       while (index < elements.length) {
