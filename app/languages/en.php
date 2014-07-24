@@ -1,5 +1,7 @@
 <?php
 
 return array(
-    'help' => 'Bantuan'
+    'help' => 'Bantuan',
+    'register' => 'Daftar',
+    'signin' => 'Masuk',
 );

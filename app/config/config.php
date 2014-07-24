@@ -12,7 +12,7 @@ $config = new \Phalcon\Config(array(
 
     'application' => array(
         'baseUri' => '/fjbgaming/',
-        'languages' => 'en',
+        'language' => 'en',
         'cacheDir' => __DIR__ . '/../../app/cache/',
         'controllersDir' => __DIR__ . '/../../app/controllers/',
         'languagesDir' => __DIR__ . '/../../app/languages/',
