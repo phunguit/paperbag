@@ -6784,6 +6784,9 @@ button.close {
   color: #aaa;
 }
 
+.nav-grid-collapse {
+  overflow: hidden;
+}
 @media (max-width: 767px) {
   .nav-grid-collapse {
     display: block;
