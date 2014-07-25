@@ -9,6 +9,12 @@ class Categories extends \Phalcon\Mvc\Model
 
     public static function getCategories()
     {
-        return parent::find(array('visible = 1', 'order' => 'sequence'));
+        $phql = 'select c.id, c.category, c.image, count(i.id) as total_items, ' .
+            'count(distinct(i.users_id)) total_users ' .
+            'from Categories as c ' .
+            'left join CategoriesItems as ci on ci.categories_id = c.id ' .
+            'left join Items as i on i.id = ci.items_id ' .
+            'group by c.id';
+        return parent::query()->getDI()->getShared('modelsManager')->executeQuery($phql);
     }
 }

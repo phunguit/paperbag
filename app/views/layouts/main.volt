@@ -75,7 +75,7 @@
                             <a href="{{ url() }}"><img src="{{ img.tiny(c.image) }}"></a>
                             <ul>
                                 <li><a href="{{ url() }}">{{ c.category|e }}</a></li>
-                                <li><small>33 items from 5 sellers</small></li>
+                                <li><small>{{ c.total_items }} {{ t.items_from }} {{ c.total_users }} {{ t.users }}</small></li>
                             </ul>
                         </div>
                     </div>

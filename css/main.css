@@ -6719,8 +6719,8 @@ button.close {
   left: 0;
 }
 .form-search .form-group:nth-child(2) {
-  padding-left: 165px;
   padding-right: 150px;
+  padding-left: 165px;
 }
 @media (max-width: 767px) {
   .form-search .form-group:nth-child(2) {
@@ -6741,10 +6741,6 @@ button.close {
 .form-search .form-control:hover, .form-search .form-control:focus {
   border-color: #cccccc;
 }
-.form-search .input-group-btn .btn {
-  -webkit-box-shadow: none;
-  box-shadow: none;
-}
 .form-search .input-group-btn .btn:hover, .form-search .input-group-btn .btn:focus {
   border-left: none;
 }
@@ -6753,25 +6749,26 @@ button.close {
 }
 
 .nav-grid {
-  display: block;
   overflow: hidden;
-  padding-top: 15px;
+  padding: 10px 0;
+  width: 100%;
   border: 1px solid #ccc;
   border-radius: 6px;
 }
 .nav-grid .nav-item {
-  overflow: hidden;
-  margin-bottom: 10px;
+  padding: 6px 0;
 }
 .nav-grid .nav-item > a {
   float: left;
 }
 .nav-grid .nav-item ul {
   margin-bottom: 0;
-  padding-left: 60px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding: 6px 0 6px 60px;
   list-style: none;
+}
+.nav-grid .nav-item li {
+  overflow: hidden;
+  white-space: nowrap;
 }
 .nav-grid .nav-item li > small {
   color: #aaa;
