@@ -86,7 +86,7 @@
 </header>
 
 <main class="main" role="content">
-    {% if not banner is empty %}
+    {% if not (banner is empty) %}
         <div class="banner">
             <a href="{{ url(banner.target) }}"><img class="img-responsive" src="{{ url(banner.banner) }}"></a>
         </div>
