@@ -32,9 +32,6 @@
             itemSelector: ".item"
           });
         });
-        $.get(container.attr("data-url"), function(data) {
-          container.html(data);
-        });
       });
     });
   });

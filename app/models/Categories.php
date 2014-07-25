@@ -14,7 +14,12 @@ class Categories extends \Phalcon\Mvc\Model
             'from Categories as c ' .
             'left join CategoriesItems as ci on ci.categories_id = c.id ' .
             'left join Items as i on i.id = ci.items_id ' .
-            'group by c.id';
-        return parent::query()->getDI()->getShared('modelsManager')->executeQuery($phql);
+            'group by c.id ' .
+            'order by c.sequence';
+
+        return parent::query()
+            ->getDI()
+            ->getShared('modelsManager')
+            ->executeQuery($phql);
     }
 }

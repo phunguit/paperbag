@@ -115,8 +115,23 @@
   }
 }
 
-.main {
-  background-color: #fff;
+.masonry {
+  .item {
+    width: 200px;
+  }
+}
+
+.thumbnail {
+  overflow: hidden;
+  margin: 5px 10px;
+  padding: 0;
+  border: none;
+  border-radius: $border-radius-large;
+  @include box-shadow(0 1px 3px rgba(0, 0, 0, .3));
+
+  .caption {
+    background-color: #fff;
+  }
 }
 
 .footer {

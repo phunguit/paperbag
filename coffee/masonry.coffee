@@ -11,11 +11,6 @@ $ ->
           itemSelector: ".item"
         return
 
-      # Load content using ajax request
-      $.get container.attr("data-url"), (data) ->
-        container.html data
-        return
-
       return
     return
   return

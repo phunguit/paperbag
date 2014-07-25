@@ -187,6 +187,9 @@ class Schema
 
     public function destroy()
     {
+        echo 'Remove models metadata...' . PHP_EOL;
+        echo shell_exec('rm -vf ' . __DIR__ . '/app/temp/*') . PHP_EOL;
+
         echo 'Delete existing tables...' . PHP_EOL;
         foreach (array_reverse($this->createTables()) as $table) {
             echo $table['drop'] . PHP_EOL;
@@ -295,14 +298,15 @@ class Schema
             $model->create();
         }
 
-        echo 'Create a banner...' . PHP_EOL;
-        for ($i = 1; $i <= 1; $i++) {
+        echo 'Create sample banners...' . PHP_EOL;
+        for ($i = 1; $i <= 2; $i++) {
             $model = new Banners();
             $model->banner = 'img/upload/banners/' . $i . '.jpg';
             $model->context = 'home';
             $model->target = '';
             $model->description = 'Description of banner ' . $i . '.';
-            $model->published = date('Y-m-d 00:00:00', microtime(true));
+            $model->visible = 1;
+            $model->published = date('Y-m-d 00:00:00', microtime(true) + (3600 * 24 * ($i - 1)));
             $model->create();
         }
 
