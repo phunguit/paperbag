@@ -128,6 +128,7 @@ class Schema
             CREATE TABLE banners (
                 id int(11) unsigned NOT NULL AUTO_INCREMENT,
                 banner varchar(255) NOT NULL,
+                context varchar(30) NOT NULL,
                 target varchar(255) DEFAULT NULL,
                 description text,
                 published datetime DEFAULT NULL,
@@ -150,6 +151,9 @@ class Schema
 
     public function setup()
     {
+        echo 'Delete models metadata...' . PHP_EOL;
+        echo shell_exec('rm -vf app/temp/*') . PHP_EOL;
+
         echo 'Delete existing tables...' . PHP_EOL;
         foreach (array_reverse($this->tables) as $table) {
             echo $table['drop'] . PHP_EOL;
@@ -267,11 +271,12 @@ class Schema
         for ($i = 1; $i <= 1; $i++) {
             $model = new Banners();
             $model->banner = 'img/upload/banners/' . $i . '.jpg';
+            $model->context = 'home';
+            $model->target = 'banner';
             $model->description = 'Description of banner ' . $i . '.';
             $model->published = date('Y-m-d 00:00:00', microtime(true));
             $model->create();
         }
-
     }
 }
 
