@@ -6793,3 +6793,40 @@ button.close {
     display: block;
   }
 }
+
+.main {
+  background-color: #fff;
+}
+
+.footer {
+  padding-top: 20px;
+  padding-bottom: 10px;
+  color: #60717c;
+  text-align: center;
+  font-size: 12px;
+}
+.footer .list-inline li {
+  padding-right: 10px;
+  padding-left: 10px;
+}
+.footer .list-inline li a {
+  color: #60717c;
+}
+.footer .list-inline li a:hover, .footer .list-inline li a:focus {
+  text-decoration: none;
+}
+.footer .list-inline li a > img {
+  margin: 0 5px 3px 0;
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+}
+.footer .list-inline li:hover, .footer .list-inline li:focus {
+  cursor: pointer;
+}
+.footer .list-inline li:hover a, .footer .list-inline li:focus a {
+  color: #fff;
+}
+.footer .list-inline li:hover a > img, .footer .list-inline li:focus a > img {
+  opacity: 1;
+  filter: alpha(opacity=100);
+}

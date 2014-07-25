@@ -88,7 +88,7 @@
 <main class="main" role="content">
     {% if not (banner is empty) %}
         <div class="banner">
-            <a href="{{ url(banner.target) }}"><img class="img-responsive" src="{{ url(banner.banner) }}"></a>
+            <a href="{{ url(banner.target|escape_attr) }}"><img class="img-responsive" src="{{ url(banner.banner) }}"></a>
         </div>
     {% endif %}
 
@@ -98,6 +98,25 @@
 </main>
 
 <footer class="footer" role="contentinfo">
+    <div class="container">
+        <ul class="list-inline">
+            {% for l in links %}
+                <li><a href="{{ url(l.target|escape_attr) }}"><img src="{{ url(l.icon) }}">{{ l.name|e }}</a></li>
+            {% endfor %}
+        </ul>
+
+        <ul class="list-inline">
+            <li><a href="{{ url() }}">{{ t.success_stories }}</a></li>
+            <li><a href="{{ url() }}">{{ t.how_to_buy }}</a></li>
+            <li><a href="{{ url() }}">{{ t.how_to_sell }}</a></li>
+            <li><a href="{{ url() }}">{{ t.money_withdrawal }}</a></li>
+            <li><a href="{{ url() }}">{{ t.terms_and_conditions }}</a></li>
+            <li><a href="{{ url() }}">{{ t.privacy_policy }}</a></li>
+            <li><a href="{{ url() }}">{{ t.help }}</a></li>
+        </ul>
+
+        <p>{{ start_year }} - {{ current_year }} &copy; {{ site_author }}</p>
+    </div>
 </footer>
 
 <script src="{{ url('js/jquery.min.js') }}"></script>

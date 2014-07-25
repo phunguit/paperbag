@@ -61,8 +61,8 @@ class Schema
                 category varchar(100) NOT NULL,
                 description text,
                 image varchar(255) NOT NULL,
-                visible tinyint(1) unsigned DEFAULT NULL,
                 sequence int(11) unsigned DEFAULT NULL,
+                visible tinyint(1) unsigned DEFAULT NULL,
                 created datetime DEFAULT NULL,
                 modified datetime DEFAULT NULL,
                 PRIMARY KEY (id)
@@ -141,11 +141,28 @@ class Schema
                 context varchar(30) NOT NULL,
                 target varchar(255) DEFAULT NULL,
                 description text,
+                visible tinyint(1) unsigned DEFAULT NULL,
                 published datetime DEFAULT NULL,
                 PRIMARY KEY (id)
             ) ENGINE=InnoDB DEFAULT CHARSET=utf8
             ',
             'drop' => 'DROP TABLE IF EXISTS banners'
+        );
+
+        $tables[] = array(
+            'create' => '
+            CREATE TABLE links (
+                id int(11) unsigned NOT NULL AUTO_INCREMENT,
+                name varchar(100) NOT NULL,
+                icon varchar(255) NOT NULL,
+                target varchar(255) DEFAULT NULL,
+                description text,
+                sequence int(11) unsigned NOT NULL,
+                visible tinyint(1) unsigned DEFAULT NULL,
+                PRIMARY KEY (id)
+            ) ENGINE=InnoDB DEFAULT CHARSET=utf8
+            ',
+            'drop' => 'DROP TABLE IF EXISTS links'
         );
 
         return $tables;
@@ -185,7 +202,8 @@ class Schema
             'site_slogan=Online store for everyone!',
             'site_description=Paper Bag provides online store service compatible with desktop and mobile browsers',
             'site_keywords=paper bag, paperbag',
-            'site_author=Kristianto Lie'
+            'site_author=Kristianto Lie',
+            'start_year=2011'
         );
         foreach ($settings as $line) {
             $array = explode('=', $line);
@@ -287,12 +305,32 @@ class Schema
             $model->published = date('Y-m-d 00:00:00', microtime(true));
             $model->create();
         }
+
+        echo 'Create some links...' . PHP_EOL;
+        $links = array(
+            'Twitter=http://twitter.com/paperbag',
+            'Facebook=http://facebook.com/paperbag',
+            'Tumblr=http://tumblr.com/paperbag',
+            'Instagram=http://instagram.com/paperbag',
+            'Google+=http://plus.google.com/+PaperBag',
+            'Pinterest=http://pinterest.com/paperbag'
+        );
+        for ($i = 1; $i <= count($links); $i++) {
+            $array = explode('=', $links[$i - 1]);
+            $model = new Links();
+            $model->name = $array[0];
+            $model->icon = 'img/upload/links/' . $i . '.png';
+            $model->target = $array[1];
+            $model->sequence = $i;
+            $model->visible = 1;
+            $model->create();
+        }
     }
 }
 
 header('Content-Type: text/plain');
-
 include __DIR__ . '/autoload.php';
+
 $schema = new Schema();
 $schema->setDb($di->getShared('db'));
 
