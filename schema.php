@@ -300,7 +300,7 @@ class Schema
             $model = new Banners();
             $model->banner = 'img/upload/banners/' . $i . '.jpg';
             $model->context = 'home';
-            $model->target = 'banner';
+            $model->target = '';
             $model->description = 'Description of banner ' . $i . '.';
             $model->published = date('Y-m-d 00:00:00', microtime(true));
             $model->create();
