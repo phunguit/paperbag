@@ -6820,9 +6820,6 @@ button.close {
   opacity: 0.5;
   filter: alpha(opacity=50);
 }
-.footer .list-inline li:hover, .footer .list-inline li:focus {
-  cursor: pointer;
-}
 .footer .list-inline li:hover a, .footer .list-inline li:focus a {
   color: #fff;
 }
