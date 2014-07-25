@@ -9,11 +9,21 @@ class Schema
 
     protected $tables;
 
-    public function __construct()
+    public function getDb()
     {
-        $this->tables = array();
+        return $this->db;
+    }
 
-        $this->tables[] = array(
+    public function setDb($db)
+    {
+        $this->db = $db;
+    }
+
+    public function createTables()
+    {
+        $tables = array();
+
+        $tables[] = array(
             'create' => '
             CREATE TABLE settings (
                 id int(11) unsigned NOT NULL AUTO_INCREMENT,
@@ -25,7 +35,7 @@ class Schema
             'drop' => 'DROP TABLE IF EXISTS settings'
         );
 
-        $this->tables[] = array(
+        $tables[] = array(
             'create' => '
             CREATE TABLE users (
                 id int(11) unsigned NOT NULL AUTO_INCREMENT,
@@ -44,7 +54,7 @@ class Schema
             'drop' => 'DROP TABLE IF EXISTS users'
         );
 
-        $this->tables[] = array(
+        $tables[] = array(
             'create' => '
             CREATE TABLE categories (
                 id int(11) unsigned NOT NULL AUTO_INCREMENT,
@@ -61,7 +71,7 @@ class Schema
             'drop' => 'DROP TABLE IF EXISTS categories'
         );
 
-        $this->tables[] = array(
+        $tables[] = array(
             'create' => '
             CREATE TABLE categories_items (
                 categories_id int(11) unsigned NOT NULL,
@@ -74,7 +84,7 @@ class Schema
             'drop' => 'DROP TABLE IF EXISTS categories_items'
         );
 
-        $this->tables[] = array(
+        $tables[] = array(
             'create' => '
             CREATE TABLE items (
                 id int(11) unsigned NOT NULL AUTO_INCREMENT,
@@ -93,7 +103,7 @@ class Schema
             'drop' => 'DROP TABLE IF EXISTS items'
         );
 
-        $this->tables[] = array(
+        $tables[] = array(
             'create' => '
             CREATE TABLE items_images (
                 items_id int(11) unsigned NOT NULL,
@@ -108,7 +118,7 @@ class Schema
             'drop' => 'DROP TABLE IF EXISTS items_images'
         );
 
-        $this->tables[] = array(
+        $tables[] = array(
             'create' => '
             CREATE TABLE items_views (
                 items_id int(11) unsigned NOT NULL,
@@ -123,7 +133,7 @@ class Schema
             'drop' => 'DROP TABLE IF EXISTS items_views'
         );
 
-        $this->tables[] = array(
+        $tables[] = array(
             'create' => '
             CREATE TABLE banners (
                 id int(11) unsigned NOT NULL AUTO_INCREMENT,
@@ -137,33 +147,33 @@ class Schema
             ',
             'drop' => 'DROP TABLE IF EXISTS banners'
         );
+
+        return $tables;
     }
 
-    public function getDb()
+    public function info()
     {
-        return $this->db;
-    }
-
-    public function setDb($db)
-    {
-        $this->db = $db;
-    }
-
-    public function setup()
-    {
-        echo 'Delete models metadata...' . PHP_EOL;
-        echo shell_exec('rm -vf app/temp/*') . PHP_EOL;
-
-        echo 'Delete existing tables...' . PHP_EOL;
-        foreach (array_reverse($this->tables) as $table) {
-            echo $table['drop'] . PHP_EOL;
-            $this->db->execute($table['drop']);
+        $tables = $this->db->query('show tables')->fetchAll();
+        foreach ($tables as $table) {
+            echo $table[0] . PHP_EOL;
         }
+    }
 
+    public function create()
+    {
         echo 'Create new tables...' . PHP_EOL;
-        foreach ($this->tables as $table) {
+        foreach ($this->createTables() as $table) {
             echo $table['create'] . PHP_EOL;
             $this->db->execute($table['create']);
+        }
+    }
+
+    public function destroy()
+    {
+        echo 'Delete existing tables...' . PHP_EOL;
+        foreach (array_reverse($this->createTables()) as $table) {
+            echo $table['drop'] . PHP_EOL;
+            $this->db->execute($table['drop']);
         }
     }
 
@@ -286,10 +296,7 @@ include __DIR__ . '/autoload.php';
 $schema = new Schema();
 $schema->setDb($di->getShared('db'));
 
-if (isset($_GET['setup']) && $_GET['setup'] == 1) {
-    $schema->setup();
-}
-
-if (isset($_GET['seed']) && $_GET['seed'] == 1) {
-    $schema->seed();
+$action = (!isset($_GET['a']) || empty($_GET['a'])) ? 'info' : $_GET['a'];
+if (method_exists($schema, $action)) {
+    $schema->$action();
 }
