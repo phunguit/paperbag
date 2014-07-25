@@ -3,7 +3,7 @@
 return array(
     'browse_all' => 'Lihat Semua',
     'help' => 'Bantuan',
-    'items_from' => 'items dari',
+    'items_from' => 'item dari',
     'register' => 'Daftar',
     'search_items' => 'Cari barang...',
     'signin' => 'Masuk',

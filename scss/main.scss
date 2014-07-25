@@ -62,6 +62,7 @@
       &:focus {
         border-left: none;
       }
+
       .glyphicon {
         color: #777;
       }
@@ -73,11 +74,19 @@
   overflow: hidden;
   padding: 10px 0;
   width: 100%;
-  border: 1px solid #ccc;
-  border-radius: $border-radius-large;
+
+  @media (min-width: $screen-sm-min) {
+    border: 1px solid #ccc;
+    border-radius: $border-radius-large;
+  }
 
   .nav-item {
     padding: 6px 0;
+
+    @media (max-width: $screen-xs-max) {
+      margin-left: (0 - ($grid-gutter-width / 2));
+      margin-right: (0 - ($grid-gutter-width / 2));
+    }
 
     > a {
       float: left;
@@ -96,5 +105,11 @@
         color: #aaa;
       }
     }
+  }
+}
+
+.nav-grid-collapse {
+  @media (max-width: $screen-xs-max) {
+    display: block;
   }
 }
