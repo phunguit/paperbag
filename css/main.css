@@ -6818,6 +6818,9 @@ button.close {
   text-align: center;
   font-size: 12px;
 }
+.footer .list-inline:first-child {
+  line-height: 26px;
+}
 .footer .list-inline li {
   padding-right: 10px;
   padding-left: 10px;
