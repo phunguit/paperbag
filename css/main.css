@@ -6703,6 +6703,9 @@ button.close {
 }
 
 .header {
+  top: 0;
+  z-index: 9990;
+  width: 100%;
   background-color: #fff;
 }
 

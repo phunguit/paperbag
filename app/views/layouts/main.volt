@@ -46,7 +46,7 @@
     </div>
 </nav>
 
-<header class="header" role="banner">
+<header class="header affix" role="banner" data-spy="affix" data-offset-top="500">
     <div class="container">
         <form class="form form-search" role="search" action="{{ url() }}">
             <div class="form-group hidden-xs">
