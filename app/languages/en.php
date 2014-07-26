@@ -15,4 +15,5 @@ return array(
     'success_stories' => 'Testimoni',
     'terms_and_conditions' => 'Syarat &amp; Ketentuan',
     'users' => 'user',
+    'views' => 'views',
 );

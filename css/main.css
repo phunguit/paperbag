@@ -6794,13 +6794,16 @@ button.close {
   }
 }
 
+.masonry {
+  padding-top: 30px;
+}
 .masonry .item {
-  width: 200px;
+  width: 188px;
 }
 
 .thumbnail {
   overflow: hidden;
-  margin: 5px 10px;
+  margin: 4px 9px;
   padding: 0;
   border: none;
   border-radius: 6px;
@@ -6808,7 +6811,12 @@ button.close {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 .thumbnail .caption {
+  border-top: 1px solid #eee;
   background-color: #fff;
+}
+.thumbnail .caption h1, .thumbnail .caption h2, .thumbnail .caption h3, .thumbnail .caption h4, .thumbnail .caption h5, .thumbnail .caption h6 {
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .footer {

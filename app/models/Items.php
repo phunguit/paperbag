@@ -11,7 +11,7 @@ class Items extends \Phalcon\Mvc\Model
 
     public static function getPopularItems()
     {
-        $phql = 'select i.id, i.name, i.price, u.name as seller, ' .
+        $phql = 'select i.id, i.name, i.price, u.userid as seller, ' .
             'm.image as thumbnail, count(v.items_id) as views ' .
             'from Items as i ' .
             'inner join Users as u on u.id = i.users_id ' .
