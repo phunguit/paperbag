@@ -6797,6 +6797,12 @@ button.close {
   }
 }
 
+@media (max-width: 767px) {
+  .affix .nav-grid-collapse {
+    display: none;
+  }
+}
+
 .main h1, .main h2 {
   color: #fff;
   text-align: center;
