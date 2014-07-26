@@ -8,6 +8,7 @@ return array(
     'how_to_sell' => 'Cara Berjualan',
     'items_from' => 'item dari',
     'money_withdrawal' => 'Penarikan Dana',
+    'popular_items' => 'Item Populer',
     'privacy_policy' => 'Kebijakan Privasi',
     'register' => 'Daftar',
     'search_items' => 'Cari barang...',

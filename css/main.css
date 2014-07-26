@@ -6797,13 +6797,18 @@ button.close {
   }
 }
 
+.main h1, .main h2 {
+  color: #fff;
+  text-align: center;
+}
+
 .banner {
   background-color: #fff;
 }
 
 .masonry {
   margin: 0 auto;
-  padding-top: 30px;
+  padding-top: 15px;
 }
 .masonry .grid-sizer {
   width: 200px;

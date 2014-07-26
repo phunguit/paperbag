@@ -3,6 +3,7 @@
 {% block title %}{{ site_slogan|e }}{% endblock %}
 
 {% block content %}
+    <h2>{{ t.popular_items }}</h2>
     <div class="masonry">
         <div class="grid-sizer"></div>
         <div class="gutter-sizer"></div>
