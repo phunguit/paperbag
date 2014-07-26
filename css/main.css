@@ -6794,16 +6794,27 @@ button.close {
   }
 }
 
+.banner {
+  background-color: #fff;
+}
+
 .masonry {
+  margin: 0 auto;
   padding-top: 30px;
 }
+.masonry .grid-sizer {
+  width: 200px;
+}
+.masonry .gutter-sizer {
+  width: 15px;
+}
 .masonry .item {
-  width: 188px;
+  margin-bottom: 15px;
 }
 
 .thumbnail {
   overflow: hidden;
-  margin: 4px 9px;
+  margin: 0;
   padding: 0;
   border: none;
   border-radius: 6px;
@@ -6820,14 +6831,18 @@ button.close {
 }
 
 .footer {
-  padding-top: 20px;
-  padding-bottom: 10px;
+  padding-top: 30px;
+  padding-bottom: 15px;
   color: #60717c;
   text-align: center;
   font-size: 12px;
 }
 .footer .list-inline:first-child {
-  line-height: 26px;
+  line-height: 2.42857;
+}
+.footer .list-inline:nth-child(2) {
+  margin-bottom: 15px;
+  line-height: 1.78571;
 }
 .footer .list-inline li {
   padding-right: 10px;
@@ -6840,7 +6855,7 @@ button.close {
   text-decoration: none;
 }
 .footer .list-inline li a > img {
-  margin: 0 5px 3px 0;
+  margin: 0 5px 4px 0;
   opacity: 0.5;
   filter: alpha(opacity=50);
 }

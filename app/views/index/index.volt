@@ -4,6 +4,8 @@
 
 {% block content %}
     <div class="masonry">
+        <div class="grid-sizer"></div>
+        <div class="gutter-sizer"></div>
         {% for i in popular_items %}
             <div class="item">
                 <div class="thumbnail">

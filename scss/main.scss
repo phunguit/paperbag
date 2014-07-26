@@ -3,7 +3,6 @@
 
 .navbar {
   margin-bottom: 0;
-
   .navbar-brand {
     @media (max-width: $screen-xs-max) {
       padding-top: 7px;
@@ -18,27 +17,23 @@
 
 .form-search {
   position: relative;
-  margin: 15px 0;
+  margin: floor($grid-gutter-width / 2) 0;
 
   .form-group {
     margin-bottom: 0;
-
     &:first-child {
       position: absolute;
       top: -7px;
       left: 0;
     }
-
     &:nth-child(2) {
       padding-right: 150px;
       padding-left: 165px;
-
       @media (max-width: $screen-xs-max) {
         padding-left: 0;
         padding-right: 0;
       }
     }
-
     &:last-child {
       position: absolute;
       top: 0;
@@ -49,7 +44,6 @@
   .form-control {
     border-right: none;
     @include box-shadow(none);
-
     &:hover,
     &:focus {
       border-color: $input-border;
@@ -71,7 +65,7 @@
 
 .nav-grid {
   overflow: hidden;
-  margin-bottom: 15px;
+  margin-bottom: floor($grid-gutter-width / 2);
   padding: 10px 0;
   width: 100%;
 
@@ -84,8 +78,8 @@
     padding: 6px 0;
 
     @media (max-width: $screen-xs-max) {
-      margin-left: (0 - ($grid-gutter-width / 2));
-      margin-right: (0 - ($grid-gutter-width / 2));
+      margin-left: (0 - floor($grid-gutter-width / 2));
+      margin-right: (0 - floor($grid-gutter-width / 2));
     }
 
     > a {
@@ -115,17 +109,30 @@
   }
 }
 
+.banner {
+  background-color: #fff;
+}
+
 .masonry {
+  margin: 0 auto;
   padding-top: $grid-gutter-width;
 
+  .grid-sizer {
+    width: 200px;
+  }
+
+  .gutter-sizer {
+    width: floor($grid-gutter-width / 2);
+  }
+
   .item {
-    width: 188px;
+    margin-bottom: floor($grid-gutter-width / 2);
   }
 }
 
 .thumbnail {
   overflow: hidden;
-  margin: 4px 9px;
+  margin: 0;
   padding: 0;
   border: none;
   border-radius: $border-radius-large;
@@ -134,7 +141,6 @@
   .caption {
     border-top: 1px solid #eee;
     background-color: #fff;
-
     h1, h2, h3, h4, h5, h6 {
       margin-top: 0;
       margin-bottom: 0;
@@ -143,15 +149,20 @@
 }
 
 .footer {
-  padding-top: 20px;
-  padding-bottom: 10px;
+  padding-top: $grid-gutter-width;
+  padding-bottom: floor($grid-gutter-width / 2);
   color: #60717c;
   text-align: center;
   font-size: $font-size-small;
 
   .list-inline {
     &:first-child {
-      line-height: 26px;
+      line-height: (1.7 * $line-height-base);
+    }
+
+    &:nth-child(2) {
+      margin-bottom: floor($grid-gutter-width / 2);
+      line-height: (1.25 * $line-height-base);
     }
 
     li {
@@ -164,9 +175,8 @@
         &:focus {
           text-decoration: none;
         }
-
         > img {
-          margin: 0 5px 3px 0;
+          margin: 0 5px 4px 0;
           @include opacity(.5);
         }
       }

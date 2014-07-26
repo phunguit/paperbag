@@ -35,7 +35,7 @@ $config = new \Phalcon\Config(array(
     'image' => array(
         'tiny' => '50x50',
         'small' => '100x100',
-        'medium' => '180x180',
+        'medium' => '200x200',
         'large' => '500x500'
     )
 ));

@@ -29,7 +29,10 @@
         container = $(this);
         container.imagesLoaded(function() {
           container.masonry({
-            itemSelector: ".item"
+            itemSelector: ".item",
+            columnWidth: ".grid-sizer",
+            gutter: ".gutter-sizer",
+            isFitWidth: true
           });
         });
       });
