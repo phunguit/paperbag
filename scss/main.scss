@@ -94,8 +94,9 @@
     li {
       overflow: hidden;
       white-space: nowrap;
-      > small {
+      > span {
         color: #aaa;
+        font-size: $font-size-small;
       }
     }
   }
@@ -126,10 +127,7 @@
 }
 
 .masonry {
-  
-}
-
-.masonry-active {
+  overflow: hidden;
   margin: 0 auto;
   padding-top: floor($grid-gutter-width / 2);
 
@@ -139,9 +137,9 @@
   .gutter-sizer {
     width: floor($grid-gutter-width / 2);
   }
-
   .item {
-    margin-bottom: floor($grid-gutter-width / 2);
+    float: left;
+    margin: 10px;
   }
 
   .thumbnail {
@@ -150,18 +148,14 @@
     padding: 0;
     width: 200px;
     border: none;
-    border-radius: $border-radius-large;
-    @include box-shadow(0 1px 3px rgba(0, 0, 0, .3));
+    border-radius: 0;
+    background-color: #fff;
 
     .caption {
-      border-top: 1px solid #eee;
-      background-color: #fff;
-
       ul {
         margin-bottom: 0;
         padding-left: 0;
         list-style: none;
-
         li {
           &:nth-child(2) {
             margin-top: 10px;
@@ -172,7 +166,6 @@
           }
         }
       }
-
       h1, h2, h3, h4, h5, h6 {
         margin-top: 0;
         margin-bottom: 0;
@@ -181,13 +174,31 @@
   }
 }
 
+.masonry-active {
+  .item {
+    margin: 0 0 floor($grid-gutter-width / 2);
+  }
+
+  .thumbnail {
+    border-radius: $border-radius-large;
+    background-color: transparent;
+    @include box-shadow(0 1px 3px rgba(0, 0, 0, .3));
+
+    .caption {
+      border-top: 1px solid #eee;
+      background-color: #fff;
+    }
+  }
+}
+
 .masonry-disabled {
   margin-right: (0 - floor($grid-gutter-width / 2));
   margin-left: (0 - floor($grid-gutter-width / 2));
-  padding-top: floor($grid-gutter-width / 2);
+  background-color: #fff;
 
   .item {
-    margin-bottom: 0;
+    margin: 0;
+    width: 100%;
     border-top: 1px solid #eee;
     &:last-child {
       border-bottom: 1px solid #eee;
@@ -195,13 +206,9 @@
   }
 
   .thumbnail {
-    overflow: hidden;
-    margin-bottom: 0;
     padding: floor($grid-gutter-width / 2);
+    width: 100%;
     height: 130px;
-    border: none;
-    border-radius: 0;
-    background-color: #fff;
 
     > a {
       float: left;
@@ -213,36 +220,16 @@
       margin-left: 110px;
       padding: 0;
       height: 100%;
-
       &:before {
         display: inline-block;
         height: 100%;
         content: "";
         vertical-align: middle;
       }
-
       ul {
         display: inline-block;
-        margin-bottom: 0;
-        padding-left: 0;
         width: 95%;
-        list-style: none;
         vertical-align: middle;
-
-        li {
-          &:nth-child(2) {
-            margin-top: 10px;
-            margin-bottom: 5px;
-          }
-          &:nth-child(3) {
-            font-size: $font-size-small;
-          }
-        }
-      }
-
-      h1, h2, h3, h4, h5, h6 {
-        margin-top: 0;
-        margin-bottom: 0;
       }
     }
   }

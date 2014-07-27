@@ -23,6 +23,12 @@ $ ->
           isFitWidth: true
         return
 
+      # Enable sticky search bar
+      header = $(".header")
+      header.addClass("affix-top")
+      header.attr("data-spy", "affix")
+      header.attr("data-offset-top", 300)
+
       return
     return
   return

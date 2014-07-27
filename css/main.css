@@ -6784,8 +6784,9 @@ button.close {
   overflow: hidden;
   white-space: nowrap;
 }
-.nav-grid .nav-item li > small {
+.nav-grid .nav-item li > span {
   color: #aaa;
+  font-size: 12px;
 }
 
 .nav-grid-collapse {
@@ -6812,26 +6813,53 @@ button.close {
   background-color: #fff;
 }
 
-.masonry-active {
+.masonry {
+  overflow: hidden;
   margin: 0 auto;
   padding-top: 15px;
 }
-.masonry-active .grid-sizer {
+.masonry .grid-sizer {
   width: 200px;
 }
-.masonry-active .gutter-sizer {
+.masonry .gutter-sizer {
   width: 15px;
 }
-.masonry-active .item {
-  margin-bottom: 15px;
+.masonry .item {
+  float: left;
+  margin: 10px;
 }
-.masonry-active .thumbnail {
+.masonry .thumbnail {
   overflow: hidden;
   margin-bottom: 0;
   padding: 0;
   width: 200px;
   border: none;
+  border-radius: 0;
+  background-color: #fff;
+}
+.masonry .thumbnail .caption ul {
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+}
+.masonry .thumbnail .caption ul li:nth-child(2) {
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+.masonry .thumbnail .caption ul li:nth-child(3) {
+  font-size: 12px;
+}
+.masonry .thumbnail .caption h1, .masonry .thumbnail .caption h2, .masonry .thumbnail .caption h3, .masonry .thumbnail .caption h4, .masonry .thumbnail .caption h5, .masonry .thumbnail .caption h6 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.masonry-active .item {
+  margin: 0 0 15px;
+}
+.masonry-active .thumbnail {
   border-radius: 6px;
+  background-color: transparent;
   -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
@@ -6839,43 +6867,24 @@ button.close {
   border-top: 1px solid #eee;
   background-color: #fff;
 }
-.masonry-active .thumbnail .caption ul {
-  margin-bottom: 0;
-  padding-left: 0;
-  list-style: none;
-}
-.masonry-active .thumbnail .caption ul li:nth-child(2) {
-  margin-top: 10px;
-  margin-bottom: 5px;
-}
-.masonry-active .thumbnail .caption ul li:nth-child(3) {
-  font-size: 12px;
-}
-.masonry-active .thumbnail .caption h1, .masonry-active .thumbnail .caption h2, .masonry-active .thumbnail .caption h3, .masonry-active .thumbnail .caption h4, .masonry-active .thumbnail .caption h5, .masonry-active .thumbnail .caption h6 {
-  margin-top: 0;
-  margin-bottom: 0;
-}
 
 .masonry-disabled {
   margin-right: -15px;
   margin-left: -15px;
-  padding-top: 15px;
+  background-color: #fff;
 }
 .masonry-disabled .item {
-  margin-bottom: 0;
+  margin: 0;
+  width: 100%;
   border-top: 1px solid #eee;
 }
 .masonry-disabled .item:last-child {
   border-bottom: 1px solid #eee;
 }
 .masonry-disabled .thumbnail {
-  overflow: hidden;
-  margin-bottom: 0;
   padding: 15px;
+  width: 100%;
   height: 130px;
-  border: none;
-  border-radius: 0;
-  background-color: #fff;
 }
 .masonry-disabled .thumbnail > a {
   float: left;
@@ -6895,22 +6904,8 @@ button.close {
 }
 .masonry-disabled .thumbnail .caption ul {
   display: inline-block;
-  margin-bottom: 0;
-  padding-left: 0;
   width: 95%;
-  list-style: none;
   vertical-align: middle;
-}
-.masonry-disabled .thumbnail .caption ul li:nth-child(2) {
-  margin-top: 10px;
-  margin-bottom: 5px;
-}
-.masonry-disabled .thumbnail .caption ul li:nth-child(3) {
-  font-size: 12px;
-}
-.masonry-disabled .thumbnail .caption h1, .masonry-disabled .thumbnail .caption h2, .masonry-disabled .thumbnail .caption h3, .masonry-disabled .thumbnail .caption h4, .masonry-disabled .thumbnail .caption h5, .masonry-disabled .thumbnail .caption h6 {
-  margin-top: 0;
-  margin-bottom: 0;
 }
 
 .footer {

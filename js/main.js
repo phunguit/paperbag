@@ -28,7 +28,7 @@
       minWidth = 768;
       viewportWidth = $("body").innerWidth();
       $(".masonry").each(function() {
-        var container;
+        var container, header;
         container = $(this);
         if (viewportWidth < minWidth) {
           container.addClass("masonry-disabled");
@@ -43,6 +43,10 @@
             isFitWidth: true
           });
         });
+        header = $(".header");
+        header.addClass("affix-top");
+        header.attr("data-spy", "affix");
+        header.attr("data-offset-top", 300);
       });
     });
   });

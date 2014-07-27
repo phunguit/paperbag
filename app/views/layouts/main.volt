@@ -45,7 +45,7 @@
     </div>
 </nav>
 
-<header class="header affix-top" role="banner" data-spy="affix" data-offset-top="300">
+<header class="header" role="banner">
     <div class="container">
         <form class="form form-search" role="search" action="{{ url() }}">
             <div class="form-group hidden-xs">
@@ -72,7 +72,7 @@
                             <a href="{{ url() }}"><img src="{{ img.tiny(c.image) }}"></a>
                             <ul>
                                 <li><a href="{{ url() }}">{{ c.category|e }}</a></li>
-                                <li><small>{{ c.total_items }} {{ t.items_from }} {{ c.total_users }} {{ t.users }}</small></li>
+                                <li><span>{{ c.total_items }} {{ t.items_from }} {{ c.total_users }} {{ t.users }}</span></li>
                             </ul>
                         </div>
                     </div>
