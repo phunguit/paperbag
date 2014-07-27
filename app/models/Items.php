@@ -19,7 +19,8 @@ class Items extends \Phalcon\Mvc\Model
             'left join ItemsViews as v on v.items_id = i.id ' .
             'where i.visible = 1 ' .
             'group by i.id ' .
-            'order by views desc, v.viewed desc, i.created desc';
+            'order by views desc, v.viewed desc, i.created desc ' .
+            'limit 15';
 
         return parent::query()
             ->getDI()
