@@ -23,7 +23,7 @@ $ ->
           isFitWidth: true
         return
 
-      # Enable sticky search bar
+      # Enable sticky search bar on sm screen or above
       header = $(".header")
       header.addClass("affix-top")
       header.attr("data-spy", "affix")

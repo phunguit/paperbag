@@ -123,7 +123,13 @@
 }
 
 .banner {
-  background-color: #fff;
+  background-color: #f2f2f2;
+  text-align: center;
+  > a {
+    > img {
+      margin: 0 auto;
+    }
+  }
 }
 
 .masonry {
