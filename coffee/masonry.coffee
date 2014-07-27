@@ -1,11 +1,20 @@
 $ ->
 
-  # Initialize masonry grid component
+  # Enable cascading grid layout library
   $(document).ready ->
+    minWidth = 768;
+    viewportWidth = $("body").innerWidth();
+
     $(".masonry").each ->
       container = $(this)
 
+      # Disable masonry grid on xs screen
+      if viewportWidth < minWidth
+        container.addClass("masonry-disabled")
+        return
+
       # Initialize masonry grid after all images have been loaded
+      container.addClass("masonry-active")
       container.imagesLoaded ->
         container.masonry
           itemSelector: ".item",

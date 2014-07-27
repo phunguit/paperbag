@@ -24,9 +24,17 @@
 
   $(function() {
     $(document).ready(function() {
+      var minWidth, viewportWidth;
+      minWidth = 768;
+      viewportWidth = $("body").innerWidth();
       $(".masonry").each(function() {
         var container;
         container = $(this);
+        if (viewportWidth < minWidth) {
+          container.addClass("masonry-disabled");
+          return;
+        }
+        container.addClass("masonry-active");
         container.imagesLoaded(function() {
           container.masonry({
             itemSelector: ".item",
