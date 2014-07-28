@@ -7,7 +7,6 @@ return array(
     'how_to_buy' => 'Cara Belanja',
     'how_to_sell' => 'Cara Berjualan',
     'items_from' => 'item dari',
-    'loading' => 'Memuat...',
     'money_withdrawal' => 'Penarikan Dana',
     'popular_items' => 'Item Populer',
     'privacy_policy' => 'Kebijakan Privasi',
