@@ -7,6 +7,9 @@
     <div class="masonry">
         <div class="grid-sizer"></div>
         <div class="gutter-sizer"></div>
+        <div class="loading-bar">
+            <a href="#"><h4>{{ t.loading }}</h4></a>
+        </div>
         {% for i in popular_items %}
             <div class="item">
                 <div class="thumbnail">

@@ -24,13 +24,13 @@
 
   $(function() {
     $(document).ready(function() {
-      var minWidth, viewportWidth;
-      minWidth = 768;
-      viewportWidth = $("body").innerWidth();
+      var currentScreen, screenSmallMin;
+      screenSmallMin = 768;
+      currentScreen = $("body").innerWidth();
       $(".masonry").each(function() {
-        var container, header;
+        var container;
         container = $(this);
-        if (viewportWidth < minWidth) {
+        if (currentScreen < screenSmallMin) {
           container.addClass("masonry-disabled");
           return;
         }
@@ -42,11 +42,8 @@
             gutter: ".gutter-sizer",
             isFitWidth: true
           });
+          container.children(".loading-bar").hide();
         });
-        header = $(".header");
-        header.addClass("affix-top");
-        header.attr("data-spy", "affix");
-        header.attr("data-offset-top", 300);
       });
     });
   });
@@ -63,6 +60,20 @@
         console[method] = noop;
       }
     }
+  });
+
+  $(function() {
+    $(document).ready(function() {
+      var currentScreen, header, screenSmallMin;
+      screenSmallMin = 768;
+      currentScreen = $("body").innerWidth();
+      if (currentScreen >= screenSmallMin) {
+        header = $(".header");
+        header.addClass("affix-top");
+        header.attr("data-spy", "affix");
+        header.attr("data-offset-top", header.height());
+      }
+    });
   });
 
 }).call(this);

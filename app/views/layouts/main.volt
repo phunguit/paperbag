@@ -84,10 +84,13 @@
 
 <main class="main" role="content">
     {% if not (banner is empty) %}
-        <div class="banner">
-            <a href="{{ url(banner.target|escape_attr) }}"><img class="img-responsive" src="{{ url(banner.banner) }}"></a>
+        <div class="container">
+            <div class="banner">
+                <a href="{{ url(banner.target|escape_attr) }}"><img class="img-responsive" src="{{ url(banner.banner) }}"></a>
+            </div>
         </div>
     {% endif %}
+
     <div class="container">
         {% block content %}{% endblock %}
     </div>

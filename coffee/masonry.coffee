@@ -2,14 +2,14 @@ $ ->
 
   # Enable cascading grid layout library
   $(document).ready ->
-    minWidth = 768;
-    viewportWidth = $("body").innerWidth();
+    screenSmallMin = 768;
+    currentScreen = $("body").innerWidth();
 
     $(".masonry").each ->
       container = $(this)
 
-      # Disable masonry grid on xs screen
-      if viewportWidth < minWidth
+      # Disable masonry grid on extra small screen
+      if currentScreen < screenSmallMin
         container.addClass("masonry-disabled")
         return
 
@@ -21,13 +21,10 @@ $ ->
           columnWidth: ".grid-sizer",
           gutter: ".gutter-sizer",
           isFitWidth: true
-        return
 
-      # Enable sticky search bar on sm screen or above
-      header = $(".header")
-      header.addClass("affix-top")
-      header.attr("data-spy", "affix")
-      header.attr("data-offset-top", 300)
+        # Close loading bar after layout complete
+        container.children(".loading-bar").hide();
+        return
 
       return
     return

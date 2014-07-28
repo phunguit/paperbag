@@ -20,7 +20,7 @@ class Items extends \Phalcon\Mvc\Model
             'where i.visible = 1 ' .
             'group by i.id ' .
             'order by views desc, v.viewed desc, i.created desc ' .
-            'limit 15';
+            'limit 30';
 
         return parent::query()
             ->getDI()

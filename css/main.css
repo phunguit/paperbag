@@ -6704,7 +6704,7 @@ button.close {
 
 .header {
   top: 0;
-  z-index: 9990;
+  z-index: 9999;
   width: 100%;
   background-color: #fff;
 }
@@ -6798,29 +6798,44 @@ button.close {
   }
 }
 
+.affix + .main {
+  margin-top: 76px;
+}
 @media (max-width: 767px) {
   .affix .nav-grid-collapse {
     display: none;
   }
 }
 
-.main h1, .main h2 {
+.main h1, .main h2, .main h3 {
+  margin: 20px 0;
   color: #fff;
   text-align: center;
 }
 
 .banner {
-  background-color: #f2f2f2;
-  text-align: center;
+  overflow: hidden;
 }
-.banner > a > img {
-  margin: 0 auto;
+@media (min-width: 768px) {
+  .banner {
+    margin-top: 15px;
+    border-radius: 6px;
+  }
+}
+@media (max-width: 767px) {
+  .banner {
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+}
+.banner img {
+  width: 100%;
 }
 
 .masonry {
+  position: relative;
   overflow: hidden;
   margin: 0 auto;
-  padding-top: 15px;
 }
 .masonry .grid-sizer {
   width: 200px;
@@ -6856,6 +6871,27 @@ button.close {
 .masonry .thumbnail .caption h1, .masonry .thumbnail .caption h2, .masonry .thumbnail .caption h3, .masonry .thumbnail .caption h4, .masonry .thumbnail .caption h5, .masonry .thumbnail .caption h6 {
   margin-top: 0;
   margin-bottom: 0;
+}
+.masonry .loading-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9998;
+  width: 100%;
+  height: 100%;
+  background-color: #2c4762;
+  text-align: center;
+}
+.masonry .loading-bar > a {
+  color: #fff;
+}
+.masonry .loading-bar > a h4, .masonry .loading-bar > a h5, .masonry .loading-bar > a h6 {
+  display: inline-block;
+  vertical-align: middle;
+}
+.masonry .loading-bar > a img {
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .masonry-active .item {
@@ -6910,6 +6946,9 @@ button.close {
   display: inline-block;
   width: 95%;
   vertical-align: middle;
+}
+.masonry-disabled .loading-bar {
+  display: none;
 }
 
 .footer {
