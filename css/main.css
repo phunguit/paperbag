@@ -6883,15 +6883,9 @@ button.close {
 }
 .masonry .loading-bar > a {
   display: block;
-  overflow: hidden;
   margin: 0 auto;
-  width: 42px;
-  height: 42px;
-  border-radius: 21px;
-  background-color: #f0f0f0;
-  text-align: center;
-  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  width: 70px;
+  height: 70px;
 }
 .masonry .loading-bar > a img {
   display: inline-block;
